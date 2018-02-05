@@ -22,6 +22,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
+    var progressBar: ProgressBar?
     
     
     //MARK: - View Controller Life Cycle
@@ -45,13 +46,32 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func fetchContactsData() {
         
+        progressBar = ProgressBar(text: "Loading contacts")
+        view.addSubview(progressBar!)
+        
         Alamofire.request(contactsUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             
+            self.progressBar?.hide()
             if let data = response.result.value as? [NSDictionary] {
                 self.contacts = Mapper<Contact>().mapArray(JSONObject: data)
                 self.sortContactsIn(ascending: true)
+            } else {
+                self.showAlert()
             }
         }
+    }
+    
+    func showAlert() {
+        
+        let alert = UIAlertController(title: "Oops!", message: "Failed to load data", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Try again", style: .default) { (action) in
+            self.fetchContactsData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
     func sortContactsIn(ascending: Bool) {

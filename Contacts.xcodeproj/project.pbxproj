@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		104545652028A3B900CA23D7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 104545642028A3B900CA23D7 /* Info.plist */; };
 		104545692028E02100CA23D7 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104545682028E02100CA23D7 /* HeaderCell.swift */; };
+		1045456B2028EA4500CA23D7 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045456A2028EA4500CA23D7 /* ProgressBar.swift */; };
 		10529A07202786A900CE8526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10529A06202786A900CE8526 /* AppDelegate.swift */; };
 		10529A0C202786A900CE8526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10529A0A202786A900CE8526 /* Main.storyboard */; };
 		10529A0E202786A900CE8526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10529A0D202786A900CE8526 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		104545642028A3B900CA23D7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		104545682028E02100CA23D7 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		1045456A2028EA4500CA23D7 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		10529A03202786A900CE8526 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10529A06202786A900CE8526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10529A0B202786A900CE8526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		10BD635020278858001D819C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1045456A2028EA4500CA23D7 /* ProgressBar.swift */,
 				104545682028E02100CA23D7 /* HeaderCell.swift */,
 			);
 			path = View;
@@ -266,6 +269,7 @@
 				104545692028E02100CA23D7 /* HeaderCell.swift in Sources */,
 				10BD635D202788FA001D819C /* Contact.swift in Sources */,
 				10BD6357202788B1001D819C /* ContactsViewController.swift in Sources */,
+				1045456B2028EA4500CA23D7 /* ProgressBar.swift in Sources */,
 				10BD6359202788BF001D819C /* ContactDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
