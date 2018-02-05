@@ -94,6 +94,14 @@ class ContactDetailsViewController: UIViewController, UITableViewDelegate, UITab
             cell.backgroundColor = UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1)
             cell.selectionStyle = .none
             cell.nameLabel.text = contact?.name
+            let nameArray = contact?.name?.components(separatedBy: " ")
+            if let count = nameArray?.count {
+                if count > 1 {
+                    cell.thumbnailLabel.text = String(nameArray![0].first!) + String(nameArray![1].first!)
+                } else {
+                    cell.thumbnailLabel.text = String(nameArray![0].first!)
+                }
+            }
             return cell
         } else {
             let cell = UITableViewCell(style: .default, reuseIdentifier: normalCellIdentifier)
