@@ -51,11 +51,52 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="iOe-qF-dZD" id="OYc-Ue-OyC"/>
+                        <segue destination="XfE-KI-Cgh" kind="show" identifier="contactDetails" id="tU7-E2-3t7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytS-vI-aKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="127.2" y="165.51724137931035"/>
+        </scene>
+        <!--Contact Details View Controller-->
+        <scene sceneID="dgY-Lc-U8A">
+            <objects>
+                <viewController id="XfE-KI-Cgh" customClass="ContactDetailsViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eff-Mr-J83">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ja-9O-h8l">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="normalCell" id="bfe-rw-OWE">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bfe-rw-OWE" id="as7-e8-GEM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PN3-hq-izL" firstAttribute="bottom" secondItem="6Ja-9O-h8l" secondAttribute="bottom" id="8yh-d2-0DZ"/>
+                            <constraint firstItem="PN3-hq-izL" firstAttribute="trailing" secondItem="6Ja-9O-h8l" secondAttribute="trailing" id="HQi-mk-9Yh"/>
+                            <constraint firstItem="6Ja-9O-h8l" firstAttribute="leading" secondItem="PN3-hq-izL" secondAttribute="leading" id="Tnf-0x-O9O"/>
+                            <constraint firstItem="6Ja-9O-h8l" firstAttribute="top" secondItem="PN3-hq-izL" secondAttribute="top" id="n2F-1P-bW9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PN3-hq-izL"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="6Ja-9O-h8l" id="L6D-S7-p5m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Bq-Ht-qGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nht-R2-X2H">

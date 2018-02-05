@@ -26,6 +26,11 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: - View Controller Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -84,6 +89,13 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         return 0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let contact = contacts?[indexPath.row] {
+            performSegue(withIdentifier: "contactDetails", sender: contact)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
@@ -91,6 +103,18 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel?.text = contacts?[indexPath.row].name
         cell.detailTextLabel?.text = contacts?[indexPath.row].phone
         return cell
+    }
+    
+    
+    //MARK: - Segue Methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "contactDetails" {
+            if let destinationVC = segue.destination as? ContactDetailsViewController {
+                destinationVC.contact = (sender as! Contact)
+            }
+        }
     }
 
 }
